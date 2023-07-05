@@ -13,7 +13,7 @@ const config: DocsThemeConfig = {
   footer: {
     text: '© mySHOEFITTER GmbH',
   },
-  darkMode: true
+  darkMode: false
 }
 
 export default config
