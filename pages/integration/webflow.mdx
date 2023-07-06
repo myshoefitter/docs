@@ -1,11 +1,37 @@
 # Webflow
  
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+You are just 2 steps away from adding mySHOEFITTER to your shop and reduce your return rate drastically.
 
-## What is Nextra?
+### Add the Script
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+1. **Log into Webflow:** Open your browser, navigate to the Webflow website (https://webflow.com), and log into your account.
 
-## Documentation
+2. **Choose your project:** From your dashboard, click on the E-Commerce project you wish to add the custom script tag to.
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+3. **Navigate to Project Settings:** Once inside your project, click on the "Project Settings" button located at the top right corner of the dashboard.
+
+4. **Select the Custom Code section:** Inside Project Settings, navigate to the "Custom Code" tab found on the top menu.
+
+5. **Add the script in the Footer Code section:** Under the "Footer Code" box, you can add the following script tag. The code you insert here will be added before the `</body>` tag on every page across your site. Make sure your script tag begins with `<script>` and ends with `</script>`.
+
+```html filename="index.html" {3} copy
+<script src="https://cdn.myshoefitter.com/script.js" data-platform="webflow" defer></script>
+```
+
+6. **Save your changes:** Click the "Save Changes" button on the top right corner of the page.
+
+7. **Publish your site:** Navigate back to the designer by clicking on the designer icon on the left-hand side. Click on the "Publish" button at the top right corner of the designer to make your changes live.
+
+### Add the button
+
+1. **Go to Designer:** In the project's dashboard, click the "Designer" button in the top-right corner to open the Designer tool.
+
+2. **Find your 'Add to Cart' button:** Navigate to the page that contains the "Add to Cart" button. Usually, it's in your product template page. If it's not visible in the page's structure, make sure you've added a product to the cart for testing purposes.
+
+3. **Add a new button:** In the left panel, select "Add Elements". Then, under the "Form" section, drag a "Button" element and drop it next to the "Add to Cart" button in your design layout.
+
+4. **Set an ID for your button:** Select your newly added button, then, on the right-side panel under "Element Settings" (the cogwheel icon), type `mySF_Widget_Button` into the "ID" field.
+
+5. **Save your changes:** Click the "Save" button in the top-right corner of the Designer interface.
+
+6. **Publish your site:** Once saved, click the "Publish" button at the top right of the designer to make your changes live.
