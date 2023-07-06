@@ -1,12 +1,14 @@
 {
   "index": "Introduction",
   "integration": "Integration",
-  "about": {
-    "title": "About",
-    "type": "page"
+  "status": {
+    "title": "System Status ↗",
+    "type": "page",
+    "href": "https://status.myshoefitter.com",
+    "newWindow": true
   },
   "contact": {
-    "title": "Contact ↗",
+    "title": "Support ↗",
     "type": "page",
     "href": "https://www.myshoefitter.com/kontakt",
     "newWindow": true

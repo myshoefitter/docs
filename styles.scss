@@ -5,12 +5,21 @@
   border-radius: 0.75rem;
   margin-top: 1.2rem;
   text-align: center;
+
   p {
     margin: 10px 0 0 0;
     color: black;
     font-weight: 500;
   }
+
   &:hover {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   }
+}
+
+a[href="https://status.myshoefitter.com"] {
+  background-image: url('/assets/images/status.svg');
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 26px;
 }
