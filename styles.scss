@@ -1,0 +1,16 @@
+.platform {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 1.5px solid #efefef;
+  border-radius: 0.75rem;
+  margin-top: 1.2rem;
+  text-align: center;
+  p {
+    margin: 10px 0 0 0;
+    color: black;
+    font-weight: 500;
+  }
+  &:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  }
+}
