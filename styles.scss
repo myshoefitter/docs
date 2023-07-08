@@ -33,6 +33,14 @@
   }
 }
 
+.banner-image {
+  display: block;
+
+  @media (min-width: 768px) {
+    margin-top: -40px;
+  }
+}
+
 a[href="https://status.myshoefitter.com"] {
   background-image: url('/images/status.svg');
   background-repeat: no-repeat;
