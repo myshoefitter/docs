@@ -2,14 +2,22 @@
  
 Our JavaScript snippet is the easiest way to integrate mySHOEFITTER into your website.
 
+### Add the Script
+
+1. Add the following script tag add the end of your product pages, just before the `</body>` tag
+
 ```html filename="index.html" {3} copy
 <script src="https://cdn.myshoefitter.com/script.js" defer></script>
 ```
 
-## What is Nextra?
+### Add the Button
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+Add a button below the "add to cart" button.
 
-## Documentation
+1. Add this code below your "add to cart" button:
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+```html filename="index.html" {3} copy
+<button id="mySF_Widget_Button">Schuhgröße herausfinden</button>
+```
+
+That's it. You are ready!

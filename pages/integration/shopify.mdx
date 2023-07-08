@@ -1,0 +1,42 @@
+# Shopify
+ 
+You are just 2 steps away from adding mySHOEFITTER to your shop and reduce your return rate drastically.
+
+### Add the Script
+
+1. Log in to your Shopify admin panel.
+
+2. From the sidebar, navigate to `Online Store > Themes`.
+
+3. Find the theme you want to edit, click `Actions`, and then click `Edit code`.
+
+4. In the `Layout` folder, click on `theme.liquid` file to open it.
+
+5. Scroll down until you find the closing `</body>` tag.
+
+6. Just before the `</body>` tag, include the script tag for your external JavaScript file, like this:
+
+```html filename="index.html" {3} copy
+<script src="https://cdn.myshoefitter.com/script.js" data-platform="shopify" defer></script>
+```
+
+7. Save your changes
+
+
+### Add the button
+
+1. In the code editor, go to the Sections directory and open the product-template.liquid file.
+
+2. Find the following code block, which typically represents the "Add to Cart" button:
+
+```html filename="index.html" {3} copy
+<button type="submit" name="add" id="AddToCart">
+```
+
+3. Directly under that line of code, add your button with a custom ID, like this:
+
+```html filename="index.html" {3} copy
+<button id="mySF_Widget_Button">Schuhgröße herausfinden</button>
+```
+
+4. Click Save.
