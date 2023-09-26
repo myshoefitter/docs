@@ -14,8 +14,17 @@ You are just 2 steps away from adding mySHOEFITTER to your shop and reduce your 
 
 5. **Add the script in the Footer Code section:** Under the "Footer Code" box, you can add the following script tag. The code you insert here will be added before the `</body>` tag on every page across your site. Make sure your script tag begins with `<script>` and ends with `</script>`.
 
-```html filename="index.html" {3} copy
-<script src="https://cdn.myshoefitter.com/script.js" data-platform="webflow" defer></script>
+```html filename="index.html" copy
+<!-- Load the mySHOEFITTER Script -->
+<script src="https://js.myshoefitter.com/v1/script.js"></script>
+
+<!-- Initialize mySHOEFITTER -->
+<script type="application/javascript">
+  myshoefitter.init({
+    shopId: 'your-shop-id', // <- Replace
+    productId: 'custom-product-id' // <- Replace
+  });
+</script>
 ```
 
 6. **Save your changes:** Click the "Save Changes" button on the top right corner of the page.
@@ -30,7 +39,7 @@ You are just 2 steps away from adding mySHOEFITTER to your shop and reduce your 
 
 3. **Add a new button:** In the left panel, select "Add Elements". Then, under the "Form" section, drag a "Button" element and drop it next to the "Add to Cart" button in your design layout.
 
-4. **Set an ID for your button:** Select your newly added button, then, on the right-side panel under "Element Settings" (the cogwheel icon), type `mySF_Widget_Button` into the "ID" field.
+4. **Set an ID for your button:** Select your newly added button, then, on the right-side panel under "Element Settings" (the cogwheel icon), type `myshoefitter-button` into the "ID" field.
 
 5. **Save your changes:** Click the "Save" button in the top-right corner of the Designer interface.
 

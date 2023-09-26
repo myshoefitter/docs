@@ -6,8 +6,17 @@ Our JavaScript snippet is the easiest way to integrate mySHOEFITTER into your we
 
 Add the following script tag add the end of your product pages, just before the `</body>` tag
 
-```html filename="index.html" {3} copy
-<script src="https://cdn.myshoefitter.com/script.js" defer></script>
+```html filename="index.html" copy
+<!-- Load the mySHOEFITTER Script -->
+<script src="https://js.myshoefitter.com/v1/script.js"></script>
+
+<!-- Initialize mySHOEFITTER -->
+<script type="application/javascript">
+  myshoefitter.init({
+    shopId: 'your-shop-id', // <- Replace
+    productId: 'custom-product-id' // <- Replace
+  });
+</script>
 ```
 
 ### Add the Button
@@ -15,16 +24,7 @@ Add the following script tag add the end of your product pages, just before the 
 Add this code below your "add to cart" button:
 
 ```html filename="index.html" {3} copy
-<button id="mySF_Widget_Button">Schuhgröße herausfinden</button>
-```
-
-### Expose the Product ID
-
-Create a hidden html element that shows the product id in plain text.
-Give it the id `product-id`.
-
-```html filename="index.html" {3} copy
-<div id="product-id" style="display: none;">ABCXYZ123</div>
+<button id="myshoefitter-button">Find the right size</button>
 ```
 
 That's it. You are ready!

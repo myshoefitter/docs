@@ -16,8 +16,17 @@ You are just 2 steps away from adding mySHOEFITTER to your shop and reduce your 
 
 6. Just before the `</body>` tag, include the script tag for your external JavaScript file, like this:
 
-```html filename="index.html" {3} copy
-<script src="https://cdn.myshoefitter.com/script.js" data-platform="shopify" defer></script>
+```html filename="index.html" copy
+<!-- Load the mySHOEFITTER Script -->
+<script src="https://js.myshoefitter.com/v1/script.js"></script>
+
+<!-- Initialize mySHOEFITTER -->
+<script type="application/javascript">
+  myshoefitter.init({
+    shopId: 'your-shop-id', // <- Replace
+    productId: 'custom-product-id' // <- Replace
+  });
+</script>
 ```
 
 7. Save your changes
@@ -36,7 +45,7 @@ You are just 2 steps away from adding mySHOEFITTER to your shop and reduce your 
 3. Directly under that line of code, add your button with a custom ID, like this:
 
 ```html filename="index.html" {3} copy
-<button id="mySF_Widget_Button">Schuhgröße herausfinden</button>
+<button id="myshoefitter-button">Find the right size</button>
 ```
 
 4. Click Save.
