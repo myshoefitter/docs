@@ -1,0 +1,49 @@
+# Dynamic Button
+ 
+To display the "Find the right size" button only for specific product numbers, you can use JavaScript to check whether the current product page has one of the specific product numbers for which the button should be displayed. Here is an example of how you could implement it:
+
+### Example
+
+```html filename="index.html" copy
+<!-- Load the mySHOEFITTER Script -->
+<script src="https://js.myshoefitter.com/v1/script.js"></script>
+
+<script type="application/javascript">
+  // Liste der Produktnummern, bei denen der Button angezeigt werden soll
+  var allowedProductIds = ['12345', '67890', '23456']; // <- Replace these with your specific product numbers
+
+  // Function for initializing mySHOEFITTER
+  function initializeMyShoeFitter(productId) {
+    myshoefitter.init({
+      shopId: 'your-shop-id', // <- Replace
+      productId: productId
+    });
+  }
+
+  // Function for checking and displaying the button
+  function checkAndDisplayButton() {
+    var productId = 'custom-product-id'; // <- Replace this with the mechanism to obtain the current product ID
+
+    if (allowedProductIds.includes(productId)) {
+      // Initialize mySHOEFITTER for the current product
+      initializeMyShoeFitter(productId);
+
+      // Display the button
+      document.getElementById('myshoefitter-button').style.display = 'block';
+    } else {
+      // Hide the button if the product is not in the list
+      document.getElementById('myshoefitter-button').style.display = 'none';
+    }
+  }
+
+  // Execute the check when the page is loaded
+  document.addEventListener('DOMContentLoaded', checkAndDisplayButton);
+</script>
+
+<button id="myshoefitter-button" style="display: none;">Find the right size</button>
+```
+
+In this example:
+- `allowedProductIds` contains the list of product numbers for which the button is to be displayed.
+- The `checkAndDisplayButton` function checks whether the current product ID is contained in `allowedProductIds`. If so, the button is displayed and mySHOEFITTER is initialized.
+- The button is hidden by default (`style="display: none;"`) and is only displayed if the condition is met.

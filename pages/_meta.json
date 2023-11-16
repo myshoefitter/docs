@@ -2,6 +2,8 @@
   "index": "Introduction",
   "start": "Getting started",
   "integration": "Integration",
+  "customization": "Customization",
+  "migration": "Migration",
   "status": {
     "title": "System Status ↗",
     "type": "page",
