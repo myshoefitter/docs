@@ -10,7 +10,7 @@ To display the "Find the right size" button only for specific product numbers, y
 
 <script type="application/javascript">
   // Liste der Produktnummern, bei denen der Button angezeigt werden soll
-  var allowedProductIds = ['12345', '67890', '23456']; // <- Replace these with your specific product numbers
+  const allowedProductIds = ['12345', '67890', '23456']; // <- Replace these with your specific product numbers
 
   // Function for initializing mySHOEFITTER
   function initializeMyShoeFitter(productId) {
@@ -22,17 +22,20 @@ To display the "Find the right size" button only for specific product numbers, y
 
   // Function for checking and displaying the button
   function checkAndDisplayButton() {
-    var productId = 'custom-product-id'; // <- Replace this with the mechanism to obtain the current product ID
+    const productId = 'custom-product-id'; // <- Replace this with the mechanism to obtain the current product ID
+    const mysfButton = document.getElementById('myshoefitter-button');
 
-    if (allowedProductIds.includes(productId)) {
-      // Initialize mySHOEFITTER for the current product
-      initializeMyShoeFitter(productId);
+    if (mysfButton) {
+      if (allowedProductIds.includes(productId)) {
+        // Initialize mySHOEFITTER for the current product
+        initializeMyShoeFitter(productId);
 
-      // Display the button
-      document.getElementById('myshoefitter-button').style.display = 'block';
-    } else {
-      // Hide the button if the product is not in the list
-      document.getElementById('myshoefitter-button').style.display = 'none';
+        // Display the button
+        document.getElementById('myshoefitter-button').style.display = 'block';
+      } else {
+        // Hide the button if the product is not in the list
+        document.getElementById('myshoefitter-button').style.display = 'none';
+      }
     }
   }
 
