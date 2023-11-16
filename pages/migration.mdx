@@ -1,0 +1,54 @@
+# Migration
+ 
+The mySHOEFITTER Shop Integration was split into two parts: A light wight JavaScript Library and nice customizable Banner that will loaded through the JavaScript Library in an iFrame. This results in a faster, safer integration for our customers!
+
+## Improvements
+- Reduced the File Size from 285 KB to **3 KB**
+- Reduced from 9078 to **174 Lines of Code** 
+- Moved whole Banner to a hosted iFrame
+- More possibilities to customize the Banner
+- Encapsulated Code that won't conflict with your website anymore
+- Better analytics and trackable user behaviour
+- Full refactoring in typescript for better scalability, maintainability, and type safety in the codebase
+
+## Migration Process
+
+The migration process should'nt take longer than two minutes.
+
+### Replace the Script
+
+Replace the following script before your `</body>` tag
+
+```diff filename="index.html" copy
+-<script src="https://cdn.myshoefitter.com/script.js" defer></script>
+```
+with the new initialization method:
+
+```html filename="index.html" copy
+<!-- Load the mySHOEFITTER Script -->
+<script src="https://js.myshoefitter.com/v1/script.js"></script>
+
+<!-- Initialize mySHOEFITTER -->
+<script type="application/javascript">
+  myshoefitter.init({
+    shopId: 'your-shop-id', // <- Replace
+    productId: 'custom-product-id' // <- Replace
+  });
+</script>
+```
+
+### Change the Button ID
+
+Change the ID of the Button from `mySF_Widget_Button` to `myshoefitter-button`:
+
+```html filename="index.html" copy
+<button id="myshoefitter-button">Find the right size</button>
+```
+
+### Remove the Product ID Element
+
+```diff filename="index.html" copy
+-<div id="product-id" style="display: none;">ABCXYZ123</div>
+```
+
+That's it. You are ready!
