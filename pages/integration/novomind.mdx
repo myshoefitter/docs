@@ -1,0 +1,64 @@
+# novomind iSHOP
+ 
+Our JavaScript snippet is the easiest way to integrate mySHOEFITTER into your website.
+
+### Add the Script
+
+Add the following script tag add the end of your product pages, just before the `</body>` tag.  
+Below you will find an example how to dynamically pass the product id to the mySHOEFITTER script.
+
+**This is an example how to retrieve the product ID dynamically!  
+If you prefer to use server side rendering or other methods, please feel free to use them instead!**
+
+```html filename="index.html" copy
+<!-- Load the mySHOEFITTER Script -->
+<script src="https://js.myshoefitter.com/v1/script.js"></script>
+
+<!-- Initialize mySHOEFITTER -->
+<script type="application/javascript">
+
+  function retrieveProductId() {
+    let id = null;
+
+    try {
+      // Safely attempt to retrieve the Product ID
+      const productDetailElement = document.querySelector('.product-detail');
+      if (productDetailElement) {
+        id = productDetailElement.getAttribute('data-product-id');
+      }
+    } catch (e) {
+      console.warn("mySHOEFITTER: Error accessing the ID from DOM:", e);
+    }
+
+    return id; // Return the found ID or null if not found
+  }
+
+  const productId = retrieveProductId();
+
+  // Check if the productId was successfully retrieved
+  if (productId) {
+    // Initialize mySHOEFITTER with the dynamically retrieved Product ID
+    myshoefitter.init({
+      shopId: 'your-shop-id', // Replace 'your-shop-id' with your actual shop ID
+      productId: productId // The dynamically retrieved Product ID
+    });
+  } else {
+    console.warn("mySHOEFITTER: Product ID not found. myshoefitter initialization skipped.");
+    // Hide mySHOEFITTER Button
+    const button = document.getElementById('myshoefitter-button');
+    if (button) {
+      button.style.display = 'none';
+    }
+  }
+</script>
+```
+
+### Add the Button
+
+Add this code below your "add to cart" button:
+
+```html filename="index.html" {3} copy
+<button id="myshoefitter-button">Find the right size</button>
+```
+
+That's it. You are ready!
