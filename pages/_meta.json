@@ -2,6 +2,7 @@
   "index": "Introduction",
   "start": "Getting started",
   "integration": "Integration",
+  "events": "Events",
   "customization": "Customization",
   "migration": "Migration",
   "status": {

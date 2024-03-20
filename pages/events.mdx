@@ -1,0 +1,84 @@
+# Events (Beta)
+ 
+Events are our way of letting you know when something interesting happens in our web app. When an interesting event occurs, we create a new event object. For example, when a user clicks through the web app or a shoe size was determined.
+
+### Example
+
+**Subscribe to Events**
+
+```html filename="index.html" {6-13} copy
+<!-- Load the mySHOEFITTER Script -->
+<script src="https://js.myshoefitter.com/v1/script.js"></script>
+
+<script type="application/javascript">
+
+  // Subscribe to Events
+  myshoefitter.events(event => {
+    console.log('mySHOEFITTER Event', event);
+    if (event.type === 'RESULT') {
+      // Work with the result
+      console.log('mySHOEFITTER Shoe Size', event.data.result);
+    }
+  });
+
+  // Initiate mySHOEFITTER like usual
+  myshoefitter.init({
+    shopId: 'your-shop-id', // <- Replace
+    productId: 'your-product-id' // <- Replace
+  });
+</script>
+```
+### All Events
+
+- **INIT**
+
+```json
+{
+  "type": "INIT",
+  "data": {
+    "shopId": "your-shop-id",
+    "productId": "your-product-id",
+    "debug": false
+  }
+}
+```
+
+- **RESULT**
+
+```json
+{
+  "type": "RESULT",
+  "data": {
+    "result": 42
+  }
+}
+```
+
+- **PAGE_VIEW**
+
+```json
+{
+  "type": "PAGE_VIEW",
+  "data": {
+    "page": "camera"
+  }
+}
+```
+Pages: `camera`, `review`, `result`, `faq`
+
+- **BANNER**
+
+```json
+{
+  "type": "BANNER",
+  "data": {
+    "action": "open"
+  }
+}
+```
+Actions: `open`, `close`
+
+---
+
+#### Need more Event?
+Let us know!
