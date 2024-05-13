@@ -47,3 +47,27 @@ a[href="https://status.myshoefitter.com"] {
   background-position: left;
   padding-left: 26px;
 }
+
+.primary-button {
+  color: #ffffff;
+  -webkit-text-fill-color: inherit;
+  background-color: #ff7d4f;
+  background-clip: border-box;
+  border: 3px solid #ff7d4f;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  line-height: 20px;
+  text-decoration: none;
+  transition: all .2s;
+  display: inline-flex;
+  margin: 20px 0;
+}
+
+.primary-button:hover {
+  color: var(--main-orange);
+  background-color: transparent;
+}
