@@ -1,0 +1,57 @@
+# Magento 2
+ 
+## Method 1: Manual Integration
+
+#### Step 1: Locate Your Product Page Template File
+
+1. **Identify the Active Theme**: Navigate to `Content` > `Design` > `Configuration` in your Magento Admin Panel to determine which theme your shop is using.
+2. **Find the Product Page Template**: The file is usually in `app/design/frontend/[Vendor]/[theme]/Magento_Catalog/templates/product/view`. The exact path may vary based on your theme and any customizations.
+
+#### Step 2: Edit the Template File
+
+1. **Access the File**: Use FTP/SFTP or File Manager to navigate to the identified path.
+2. **Backup the Original File**: Copy and rename the file (e.g., `details.phtml.bak`) before making changes.
+3. **Edit the File**: Open the file for editing and find the closing `</body>` tag. If it's not present, you may need to edit a more generic template like `default.phtml` under `Magento_Theme`.
+
+#### Step 3: Insert the JavaScript Snippet
+
+Paste the snippet directly above the closing `</body>` tag or at the bottom of the file:
+
+```html
+<script src="https://js.myshoefitter.com/v1/script.js"></script>
+<script type="application/javascript">
+  myshoefitter.init({
+    shopSystem: 'magento',
+  });
+</script>
+```
+
+#### Step 4: Flush Magento Cache
+
+To ensure your changes take effect immediately, you need to flush Magento's cache.
+
+1. **Navigate to Cache Management**: In your Magento Admin Panel, go to `System` > `Tools` > `Cache Management`.
+2. **Flush the Cache**: Select all cache types and click "Flush Magento Cache." If necessary, also click "Flush Cache Storage" to ensure all cache is cleared.
+
+#### Step 5: Test Your Changes
+
+After flushing the cache, it's important to verify that the JavaScript snippet has been successfully integrated into your product pages.
+
+1. **Visit a Product Page**: Open any product page on your Magento shop in a web browser.
+2. **Inspect Page Source**: Right-click on the page and select "View Page Source" or "Inspect" (the option may vary depending on your browser).
+3. **Verify Snippet**: Use the browser's search function (usually Ctrl+F or Command+F) to look for a unique part of the snippet, such as `myshoefitter.init`. Confirm it's present and correctly placed above the closing body tag.
+
+
+## Method 2: Magento Plugin (Beta)
+
+Please refer to the plugin repository on github: <a href="https://github.com/myshoefitter/magento-plugin/tree/main" target="_blank">https://github.com/myshoefitter/magento-plugin/tree/main</a>
+
+## Troubleshooting
+
+If you encounter issues or the snippet does not appear on your product pages, consider the following troubleshooting steps:
+
+- **Correct Template File**: Ensure you've edited the right template file that corresponds to your theme's product page layout.
+- **Browser Cache**: Clear your web browser's cache or use an incognito window to view the changes. Sometimes, browsers cache pages aggressively.
+- **Template Hierarchy**: If the `</body>` tag is not in the edited file, ensure you've placed the snippet in a template file that's included across all product pages, such as a common footer template.
+
+
