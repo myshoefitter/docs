@@ -1,6 +1,6 @@
 # Shopify
  
-You are just 2 steps away from adding mySHOEFITTER to your shop and reduce your return rate drastically.
+You are just 1 step away from adding mySHOEFITTER to your shop and reduce your return rate drastically.
 
 ### Add the Script
 
@@ -23,31 +23,11 @@ You are just 2 steps away from adding mySHOEFITTER to your shop and reduce your 
 <!-- Initialize mySHOEFITTER -->
 <script type="application/javascript">
   myshoefitter.init({
-    shopId: 'your-shop-id', // <- Replace
-    productId: 'custom-product-id' // <- Replace
+    shopSystem: 'shopify'
   });
 </script>
 ```
 
 7. Save your changes
 
-
-### Add the button
-
-1. In the code editor, go to the Sections directory and open the product-template.liquid file.
-
-2. Find the following code block, which typically represents the "Add to Cart" button:
-
-```html filename="index.html" {3} copy
-<button type="submit" name="add" id="AddToCart">
-```
-
-3. Directly under that line of code, add your button with a custom ID, like this:
-
-```html filename="index.html" {3} copy
-<button id="myshoefitter-button">Find the right size</button>
-```
-
-4. Style your button to fit your shop scheme.
-
-5. Click Save.
+**You are ready! The mySHOEFITTER Button should be displayed underneath your "Add to Cart"-Button!**

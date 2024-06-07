@@ -1,0 +1,26 @@
+# Button Options
+ 
+Feel free to customize the mySHOEFITTER-Button to fit your needs!
+
+### Example
+
+```html filename="index.html" {7-16} copy
+<!-- Load the mySHOEFITTER Script -->
+<script src="https://js.myshoefitter.com/v1/script.js"></script>
+
+<script type="application/javascript">
+  myshoefitter.init({
+    shopSystem: 'shopify'
+    button: {
+      text: "Schuhgröße finden",
+      attachTo: ".cart-button",
+      position: "after", // before
+      styles: {
+        backgroundColor: "#000000",
+        color: "#ffffff",
+        fontWeight: "bold"
+      }
+    }
+  });
+</script>
+```
