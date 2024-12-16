@@ -1,25 +1,25 @@
-# Shopify
- 
-You are just 1 step away from adding mySHOEFITTER to your shop and reduce your return rate drastically.
+import { Callout } from 'nextra/components'
 
-### Add the Script
+# Shopify 
 
-<video width="100%" height="auto" controls style={{marginTop: '10px', borderRadius: '10px'}}>
-  <source src="/videos/shopify-integration-en.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
+### Manual Installation
 
-1. Log in to your Shopify admin panel.
+1. Log in to your Shopify admin panel
 
-2. From the sidebar, navigate to `Online Store > Themes`.
+2. Install the following plugin in your shop, by clicking the install button on the following page:
+https://apps.shopify.com/insert-code-to-header-and-footer
 
-3. Find the theme you want to edit, click `Actions`, and then click `Edit code`.
+3. Click the little pin icon beside "XO Code Insert" so the app stays in the sidebar.
 
-4. In the `Layout` folder, click on `theme.liquid` file or the file which renders your product page and open it.
+4.  Click on "Add new code":
 
-5. Scroll down until you find the closing `</body>` tag.
+<img src="/images/integrations/shopify/xo-add-code.png" />
 
-6. Just before the `</body>` tag, include the script tag for your external JavaScript file, like this:
+5. Enter "mySHOEFITTER" into the "Title" input
+
+6. Scroll down until you find the input box called "Code in body"
+
+7. Place the code you received from us. It should look similar to this one:
 
 ```html filename="index.html" copy
 <!-- Load the mySHOEFITTER Script -->
@@ -33,6 +33,35 @@ You are just 1 step away from adding mySHOEFITTER to your shop and reduce your r
 </script>
 ```
 
-7. Save your changes
+<img src="/images/integrations/shopify/xo-code-editor.png" />
 
-**You are ready! The mySHOEFITTER Button should be displayed underneath your "Add to Cart"-Button!**
+7. Click the save button and close the popup that appears after saving the code
+
+8. Click on the link "theme customizer":
+
+<img src="/images/integrations/shopify/xo-activate-1.png" />
+
+9. Enable "XO Insert code Body" and click on "save":
+
+<img src="/images/integrations/shopify/xo-activate-2.png" />
+
+Now you should see the button on your product page. If not, please notify us, so a technican of our team can take a look.
+
+### Installation Service
+
+If you having trouble adding the script by yourself, we would love to help you.
+
+1. In your Shopify admin area, go to Settings (Einstellungen)
+
+2. Go to "Users and Roles" ("Nutzer und Berechtigungen")
+
+3. Scroll down to Collaborators (Gäste)
+
+4. Copy the for Digit Code and send it to us
+
+<img src="/images/integrations/shopify/collaboration.png" />
+
+<Callout type="info" emoji="ℹ️">
+  Now, we can request access to your shop through our Shopify Partner Account. We won't be able to see any orders or customers. We just request permissions to install apps in your shop. You'll receive an email when we request access to your store. Please click the confirmation link in the email.
+</Callout>
+
