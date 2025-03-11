@@ -1,0 +1,62 @@
+import { Callout } from 'nextra/components'
+
+# Shopify 
+
+### Manual Installation
+
+1. Log in to your Shopware admin panel
+
+2. Install the following plugin in your shop, by clicking the install button on the following page:
+https://store.shopware.com/en/dne5719820551438m/custom-javascript-css-manager-for-shopware-6.html
+
+2. Select “Settings / System” and click on the “Plugin” icon.
+
+<img src="/images/integrations/shopware/install-plugin-1.png" />
+
+3. Locate your purchased/downloaded plugin in the list
+
+5. After successful installation, click the switch button to activate the plugin
+
+6. Go to Extensions -> Custom CSS/JS
+
+<img src="/images/integrations/shopware/install-plugin-2.png" />
+
+6. Click on "Add Cointainer" / "Container hinzufügen"
+
+<img src="/images/integrations/shopware/install-plugin-3.png" />
+
+7. Set "mySHOEFITTER" in the "Name" field and select sales channel.
+
+<img src="/images/integrations/shopware/install-plugin-4.png" />
+
+8. Now paste the following javascript code in the "Javascript" field:
+
+```js filename="mysf.js" copy
+document.addEventListener('DOMContentLoaded', function() {
+  const script = document.createElement('script');
+  script.src = 'https://js.myshoefitter.com/v1/script.js';
+  script.async = true;
+    
+  script.onload = function() {
+    myshoefitter.init({
+      shopSystem: 'shopware'
+    });
+  };
+    
+  script.onerror = function() {
+    console.error('Failed to load mySHOEFITTER script');
+  };
+    
+  document.head.appendChild(script);
+});
+```
+
+9. Click the "Save and Compile"-Button
+
+Now you should see the button on your product page. If not, please notify us, so a technican of our team can take a look.
+
+### Installation Service
+
+If you having trouble adding the script by yourself, we would love to help you.
+
+Please send login credentials to your contact person as mySHOEFITTER.
