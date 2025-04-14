@@ -1,8 +1,44 @@
 import { Callout } from 'nextra/components'
 
-# Shopify 
+# Shopware 6 
 
 ### Manual Installation
+
+Follow these steps to add custom JavaScript to your Shopware 6 shop:
+
+1. Log in to your Shopware Admin Panel
+
+2. Navigate to **Configuration** > **Theme Manager**
+
+3. Find your active theme and click on the **gear icon** to edit it
+
+4. In the theme editor, look for the **Other** or **Advanced** tab (depending on your specific theme)
+
+5. Find the **External JavaScript** section or field
+
+6. Make sure to include the proper `<script>` tags:
+
+```html filename="index.html" copy
+<!-- Load the mySHOEFITTER Script -->
+<script src="https://js.myshoefitter.com/v1/script.js"></script>
+
+<!-- Initialize mySHOEFITTER -->
+<script type="application/javascript">
+  myshoefitter.init({
+    shopSystem: 'shopware'
+  });
+</script>
+```
+
+7. Click **Save** to apply your changes
+
+8. Click "Recompile Theme" in the popup
+
+9. Visit your shop's frontend and verify that your JavaScript is working as expected
+
+---
+
+### Alternative Installation (using a plugin)
 
 1. Log in to your Shopware admin panel
 
@@ -54,9 +90,3 @@ document.addEventListener('DOMContentLoaded', function() {
 9. Click the "Save and Compile"-Button
 
 Now you should see the button on your product page. If not, please notify us, so a technican of our team can take a look.
-
-### Installation Service
-
-If you having trouble adding the script by yourself, we would love to help you.
-
-Please send login credentials to your contact person as mySHOEFITTER.
